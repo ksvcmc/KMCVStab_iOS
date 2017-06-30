@@ -1,0 +1,6 @@
+framework module KMCVStab {
+  umbrella header "KMCVStab.h"
+
+  export *
+  module * { export * }
+}

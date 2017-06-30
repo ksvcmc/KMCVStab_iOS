@@ -1,0 +1,10 @@
+.DS_Store
+.Podfile
+Podfile.lock
+out/
+Pods/
+Build/
+Resources/
+Pods/
+KMCVStab.xcodeproj/project.xcworkspace/
+KMCVStab.xcodeproj/xcuserdata/

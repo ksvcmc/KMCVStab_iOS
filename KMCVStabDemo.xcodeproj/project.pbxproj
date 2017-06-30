@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BCBB287CAF06FAE14585AFD /* libPods-KMCVStabDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F0A6BC06317155D2BBD3D6 /* libPods-KMCVStabDemo.a */; };
+		95060F6B1F063D0B006BE184 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95060F621F063D0B006BE184 /* Info.plist */; };
+		95060F6E1F063D0B006BE184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95060F651F063D0B006BE184 /* Assets.xcassets */; };
+		95060F721F063D0B006BE184 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 95060F691F063D0B006BE184 /* Base.lproj */; };
+		95060F8B1F063E79006BE184 /* VideoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F871F063E79006BE184 /* VideoListModel.m */; };
+		95060F8C1F063E79006BE184 /* NSString+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F8A1F063E79006BE184 /* NSString+Add.m */; };
+		95060F901F063E83006BE184 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F8F1F063E83006BE184 /* Helper.m */; };
+		95060FA91F063E8B006BE184 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F931F063E8B006BE184 /* AppDelegate.m */; };
+		95060FAA1F063E8B006BE184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F951F063E8B006BE184 /* main.m */; };
+		95060FAB1F063E8B006BE184 /* EmptyVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F991F063E8B006BE184 /* EmptyVideoView.m */; };
+		95060FAC1F063E8B006BE184 /* KMCVStabGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F9B1F063E8B006BE184 /* KMCVStabGLView.m */; };
+		95060FAD1F063E8B006BE184 /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F9D1F063E8B006BE184 /* PlayView.m */; };
+		95060FAE1F063E8B006BE184 /* RecView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F9F1F063E8B006BE184 /* RecView.m */; };
+		95060FAF1F063E8B006BE184 /* VideoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA11F063E8B006BE184 /* VideoList.m */; };
+		95060FB01F063E8B006BE184 /* ViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA31F063E8B006BE184 /* ViewItemCell.m */; };
+		95060FB11F063E8B006BE184 /* PlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA61F063E8B006BE184 /* PlayVC.m */; };
+		95060FB21F063E8B006BE184 /* RecVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA81F063E8B006BE184 /* RecVC.m */; };
+		95060FB61F06401C006BE184 /* KMCVStab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95060F5D1F063C35006BE184 /* KMCVStab.framework */; };
+		95060FB71F06401C006BE184 /* KMCVStab.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95060F5D1F063C35006BE184 /* KMCVStab.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95060FB81F06401C006BE184 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95060FB71F06401C006BE184 /* KMCVStab.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5DD6A3909FA25539410AB879 /* Pods-KMCVStabDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCVStabDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo.release.xcconfig"; sourceTree = "<group>"; };
+		60529C4C3C76E896E6D39232 /* Pods-KMCVStabDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCVStabDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		95060F431F063BB1006BE184 /* KMCVStabDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMCVStabDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95060F5D1F063C35006BE184 /* KMCVStab.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KMCVStab.framework; path = framework/KMCVStab.framework; sourceTree = "<group>"; };
+		95060F621F063D0B006BE184 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95060F651F063D0B006BE184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95060F691F063D0B006BE184 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		95060F861F063E79006BE184 /* VideoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListModel.h; sourceTree = "<group>"; };
+		95060F871F063E79006BE184 /* VideoListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListModel.m; sourceTree = "<group>"; };
+		95060F891F063E79006BE184 /* NSString+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Add.h"; sourceTree = "<group>"; };
+		95060F8A1F063E79006BE184 /* NSString+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Add.m"; sourceTree = "<group>"; };
+		95060F8E1F063E83006BE184 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		95060F8F1F063E83006BE184 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		95060F921F063E8B006BE184 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		95060F931F063E8B006BE184 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		95060F941F063E8B006BE184 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		95060F951F063E8B006BE184 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95060F961F063E8B006BE184 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		95060F981F063E8B006BE184 /* EmptyVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyVideoView.h; sourceTree = "<group>"; };
+		95060F991F063E8B006BE184 /* EmptyVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyVideoView.m; sourceTree = "<group>"; };
+		95060F9A1F063E8B006BE184 /* KMCVStabGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMCVStabGLView.h; sourceTree = "<group>"; };
+		95060F9B1F063E8B006BE184 /* KMCVStabGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMCVStabGLView.m; sourceTree = "<group>"; };
+		95060F9C1F063E8B006BE184 /* PlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayView.h; sourceTree = "<group>"; };
+		95060F9D1F063E8B006BE184 /* PlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayView.m; sourceTree = "<group>"; };
+		95060F9E1F063E8B006BE184 /* RecView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecView.h; sourceTree = "<group>"; };
+		95060F9F1F063E8B006BE184 /* RecView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecView.m; sourceTree = "<group>"; };
+		95060FA01F063E8B006BE184 /* VideoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoList.h; sourceTree = "<group>"; };
+		95060FA11F063E8B006BE184 /* VideoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoList.m; sourceTree = "<group>"; };
+		95060FA21F063E8B006BE184 /* ViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewItemCell.h; sourceTree = "<group>"; };
+		95060FA31F063E8B006BE184 /* ViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewItemCell.m; sourceTree = "<group>"; };
+		95060FA51F063E8B006BE184 /* PlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVC.h; sourceTree = "<group>"; };
+		95060FA61F063E8B006BE184 /* PlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVC.m; sourceTree = "<group>"; };
+		95060FA71F063E8B006BE184 /* RecVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecVC.h; sourceTree = "<group>"; };
+		95060FA81F063E8B006BE184 /* RecVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecVC.m; sourceTree = "<group>"; };
+		B0F0A6BC06317155D2BBD3D6 /* libPods-KMCVStabDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCVStabDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95060F401F063BB1006BE184 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95060FB61F06401C006BE184 /* KMCVStab.framework in Frameworks */,
+				7BCBB287CAF06FAE14585AFD /* libPods-KMCVStabDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		853C087BF2425288F3FB00C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60529C4C3C76E896E6D39232 /* Pods-KMCVStabDemo.debug.xcconfig */,
+				5DD6A3909FA25539410AB879 /* Pods-KMCVStabDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		95060F3A1F063BB1006BE184 = {
+			isa = PBXGroup;
+			children = (
+				95060F5D1F063C35006BE184 /* KMCVStab.framework */,
+				95060F451F063BB1006BE184 /* KMCVStabDemo */,
+				95060F441F063BB1006BE184 /* Products */,
+				853C087BF2425288F3FB00C1 /* Pods */,
+				DB5FEFB5E7EB62C61B800F9C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		95060F441F063BB1006BE184 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95060F431F063BB1006BE184 /* KMCVStabDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95060F451F063BB1006BE184 /* KMCVStabDemo */ = {
+			isa = PBXGroup;
+			children = (
+				95060F911F063E8B006BE184 /* Application */,
+				95060F971F063E8B006BE184 /* View */,
+				95060FA41F063E8B006BE184 /* ViewController */,
+				95060F8D1F063E83006BE184 /* Utils */,
+				95060F851F063E79006BE184 /* Model */,
+				95060F881F063E79006BE184 /* Category */,
+				95060F461F063BB1006BE184 /* Supporting Files */,
+			);
+			path = KMCVStabDemo;
+			sourceTree = "<group>";
+		};
+		95060F461F063BB1006BE184 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95060F621F063D0B006BE184 /* Info.plist */,
+				95060F691F063D0B006BE184 /* Base.lproj */,
+				95060F651F063D0B006BE184 /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95060F851F063E79006BE184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95060F861F063E79006BE184 /* VideoListModel.h */,
+				95060F871F063E79006BE184 /* VideoListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95060F881F063E79006BE184 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				95060F891F063E79006BE184 /* NSString+Add.h */,
+				95060F8A1F063E79006BE184 /* NSString+Add.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		95060F8D1F063E83006BE184 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				95060F8E1F063E83006BE184 /* Helper.h */,
+				95060F8F1F063E83006BE184 /* Helper.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		95060F911F063E8B006BE184 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				95060F921F063E8B006BE184 /* AppDelegate.h */,
+				95060F931F063E8B006BE184 /* AppDelegate.m */,
+				95060F941F063E8B006BE184 /* Defines.h */,
+				95060F951F063E8B006BE184 /* main.m */,
+				95060F961F063E8B006BE184 /* PrefixHeader.pch */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		95060F971F063E8B006BE184 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95060F981F063E8B006BE184 /* EmptyVideoView.h */,
+				95060F991F063E8B006BE184 /* EmptyVideoView.m */,
+				95060F9A1F063E8B006BE184 /* KMCVStabGLView.h */,
+				95060F9B1F063E8B006BE184 /* KMCVStabGLView.m */,
+				95060F9C1F063E8B006BE184 /* PlayView.h */,
+				95060F9D1F063E8B006BE184 /* PlayView.m */,
+				95060F9E1F063E8B006BE184 /* RecView.h */,
+				95060F9F1F063E8B006BE184 /* RecView.m */,
+				95060FA01F063E8B006BE184 /* VideoList.h */,
+				95060FA11F063E8B006BE184 /* VideoList.m */,
+				95060FA21F063E8B006BE184 /* ViewItemCell.h */,
+				95060FA31F063E8B006BE184 /* ViewItemCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95060FA41F063E8B006BE184 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				95060FA51F063E8B006BE184 /* PlayVC.h */,
+				95060FA61F063E8B006BE184 /* PlayVC.m */,
+				95060FA71F063E8B006BE184 /* RecVC.h */,
+				95060FA81F063E8B006BE184 /* RecVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DB5FEFB5E7EB62C61B800F9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A6BC06317155D2BBD3D6 /* libPods-KMCVStabDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95060F421F063BB1006BE184 /* KMCVStabDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95060F5A1F063BB1006BE184 /* Build configuration list for PBXNativeTarget "KMCVStabDemo" */;
+			buildPhases = (
+				A407C9930C42D593641C4FB0 /* [CP] Check Pods Manifest.lock */,
+				95060F3F1F063BB1006BE184 /* Sources */,
+				95060F401F063BB1006BE184 /* Frameworks */,
+				95060F411F063BB1006BE184 /* Resources */,
+				95060FB81F06401C006BE184 /* Embed Frameworks */,
+				A00A95E7A340FD695E0A2BB0 /* [CP] Embed Pods Frameworks */,
+				0B65E5FB93EFEAF63F595F00 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMCVStabDemo;
+			productName = KMCVStabDemo;
+			productReference = 95060F431F063BB1006BE184 /* KMCVStabDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95060F3B1F063BB1006BE184 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = ksyun;
+				TargetAttributes = {
+					95060F421F063BB1006BE184 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = ZGJ54Q7R45;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 95060F3E1F063BB1006BE184 /* Build configuration list for PBXProject "KMCVStabDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95060F3A1F063BB1006BE184;
+			productRefGroup = 95060F441F063BB1006BE184 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95060F421F063BB1006BE184 /* KMCVStabDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95060F411F063BB1006BE184 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95060F721F063D0B006BE184 /* Base.lproj in Resources */,
+				95060F6B1F063D0B006BE184 /* Info.plist in Resources */,
+				95060F6E1F063D0B006BE184 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B65E5FB93EFEAF63F595F00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A00A95E7A340FD695E0A2BB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A407C9930C42D593641C4FB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95060F3F1F063BB1006BE184 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95060FB21F063E8B006BE184 /* RecVC.m in Sources */,
+				95060FAB1F063E8B006BE184 /* EmptyVideoView.m in Sources */,
+				95060FAF1F063E8B006BE184 /* VideoList.m in Sources */,
+				95060FAA1F063E8B006BE184 /* main.m in Sources */,
+				95060FA91F063E8B006BE184 /* AppDelegate.m in Sources */,
+				95060FAC1F063E8B006BE184 /* KMCVStabGLView.m in Sources */,
+				95060F8B1F063E79006BE184 /* VideoListModel.m in Sources */,
+				95060FB11F063E8B006BE184 /* PlayVC.m in Sources */,
+				95060F901F063E83006BE184 /* Helper.m in Sources */,
+				95060FAD1F063E8B006BE184 /* PlayView.m in Sources */,
+				95060FB01F063E8B006BE184 /* ViewItemCell.m in Sources */,
+				95060F8C1F063E79006BE184 /* NSString+Add.m in Sources */,
+				95060FAE1F063E8B006BE184 /* RecView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		95060F581F063BB1006BE184 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95060F591F063BB1006BE184 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95060F5B1F063BB1006BE184 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60529C4C3C76E896E6D39232 /* Pods-KMCVStabDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KMCVStabDemo/Application/PrefixHeader.pch";
+				INFOPLIST_FILE = KMCVStabDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ksyun.mc.KMCVStabDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		95060F5C1F063BB1006BE184 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DD6A3909FA25539410AB879 /* Pods-KMCVStabDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KMCVStabDemo/Application/PrefixHeader.pch";
+				INFOPLIST_FILE = KMCVStabDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ksyun.mc.KMCVStabDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95060F3E1F063BB1006BE184 /* Build configuration list for PBXProject "KMCVStabDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95060F581F063BB1006BE184 /* Debug */,
+				95060F591F063BB1006BE184 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95060F5A1F063BB1006BE184 /* Build configuration list for PBXNativeTarget "KMCVStabDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95060F5B1F063BB1006BE184 /* Debug */,
+				95060F5C1F063BB1006BE184 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95060F3B1F063BB1006BE184 /* Project object */;
+}
