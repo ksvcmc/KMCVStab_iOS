@@ -15,7 +15,6 @@
 		95060F8C1F063E79006BE184 /* NSString+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F8A1F063E79006BE184 /* NSString+Add.m */; };
 		95060F901F063E83006BE184 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F8F1F063E83006BE184 /* Helper.m */; };
 		95060FA91F063E8B006BE184 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F931F063E8B006BE184 /* AppDelegate.m */; };
-		95060FAA1F063E8B006BE184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F951F063E8B006BE184 /* main.m */; };
 		95060FAB1F063E8B006BE184 /* EmptyVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F991F063E8B006BE184 /* EmptyVideoView.m */; };
 		95060FAC1F063E8B006BE184 /* KMCVStabGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F9B1F063E8B006BE184 /* KMCVStabGLView.m */; };
 		95060FAD1F063E8B006BE184 /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060F9D1F063E8B006BE184 /* PlayView.m */; };
@@ -26,6 +25,7 @@
 		95060FB21F063E8B006BE184 /* RecVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA81F063E8B006BE184 /* RecVC.m */; };
 		95060FB61F06401C006BE184 /* KMCVStab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95060F5D1F063C35006BE184 /* KMCVStab.framework */; };
 		95060FB71F06401C006BE184 /* KMCVStab.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95060F5D1F063C35006BE184 /* KMCVStab.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9595C32A1F06739200DAB865 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595C3291F06739200DAB865 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +59,6 @@
 		95060F921F063E8B006BE184 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		95060F931F063E8B006BE184 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		95060F941F063E8B006BE184 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
-		95060F951F063E8B006BE184 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95060F961F063E8B006BE184 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		95060F981F063E8B006BE184 /* EmptyVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyVideoView.h; sourceTree = "<group>"; };
 		95060F991F063E8B006BE184 /* EmptyVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyVideoView.m; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		95060FA61F063E8B006BE184 /* PlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVC.m; sourceTree = "<group>"; };
 		95060FA71F063E8B006BE184 /* RecVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecVC.h; sourceTree = "<group>"; };
 		95060FA81F063E8B006BE184 /* RecVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecVC.m; sourceTree = "<group>"; };
+		9595C3291F06739200DAB865 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0F0A6BC06317155D2BBD3D6 /* libPods-KMCVStabDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCVStabDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -175,10 +175,10 @@
 		95060F911F063E8B006BE184 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				9595C3291F06739200DAB865 /* main.m */,
 				95060F921F063E8B006BE184 /* AppDelegate.h */,
 				95060F931F063E8B006BE184 /* AppDelegate.m */,
 				95060F941F063E8B006BE184 /* Defines.h */,
-				95060F951F063E8B006BE184 /* main.m */,
 				95060F961F063E8B006BE184 /* PrefixHeader.pch */,
 			);
 			path = Application;
@@ -346,10 +346,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9595C32A1F06739200DAB865 /* main.m in Sources */,
 				95060FB21F063E8B006BE184 /* RecVC.m in Sources */,
 				95060FAB1F063E8B006BE184 /* EmptyVideoView.m in Sources */,
 				95060FAF1F063E8B006BE184 /* VideoList.m in Sources */,
-				95060FAA1F063E8B006BE184 /* main.m in Sources */,
 				95060FA91F063E8B006BE184 /* AppDelegate.m in Sources */,
 				95060FAC1F063E8B006BE184 /* KMCVStabGLView.m in Sources */,
 				95060F8B1F063E79006BE184 /* VideoListModel.m in Sources */,
@@ -471,6 +471,23 @@
 				INFOPLIST_FILE = KMCVStabDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"MBProgressHUD\"",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksyun.mc.KMCVStabDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -490,6 +507,23 @@
 				INFOPLIST_FILE = KMCVStabDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"MBProgressHUD\"",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksyun.mc.KMCVStabDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
