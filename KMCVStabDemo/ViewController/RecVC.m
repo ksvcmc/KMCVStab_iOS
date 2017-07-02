@@ -58,7 +58,8 @@
     self = [super init];
     if (self) {
         _vStab = [KMCVStab sharedInstance];
-        [_vStab authWithToken:@"bafa06b24c9260562ab961a84313c110" onSuccess:^{
+        
+        [_vStab authWithToken:@"a2fa06b24c9173562ab961a84313c00a" onSuccess:^{
             NSLog(@"鉴权成功");
         } onFailure:^(AuthorizeError iErrorCode) {
             NSString * errorMessage = [[NSString alloc]initWithFormat:@"鉴权失败，错误码:%@", @(iErrorCode)];
@@ -93,7 +94,6 @@
     // Do any additional setup after loading the view.
     _videoTrackTransform = CGAffineTransformIdentity;
 
-    [self setupCamera];
     [self.view addSubview:self.recView];
     [_recView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -155,6 +155,8 @@
                                              selector:@selector(onEnterBackground:)
                                                  name:UIApplicationWillResignActiveNotification
                                                object:nil];
+    
+    [self setupCamera];
 }
 
 
