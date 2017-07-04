@@ -191,7 +191,9 @@
 - (void)onValueChanged:(UISwitch *)sender
 {
     if (self.block){
+        
         self.block(kVStab, sender.on);
+        self.vstabLabel.text = [NSString stringWithFormat:@"防抖:%@", _vstabSwitch.on?@"开":@"关"];
     }
     
 }

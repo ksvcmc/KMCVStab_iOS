@@ -8,8 +8,8 @@
 
 #import "KMCVStabGLView.h"
 #import <OpenGLES/EAGL.h>
-#import <OpenGLES/ES3/gl.h>
-#import <OpenGLES/ES3/glext.h>
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
 #import <QuartzCore/CAEAGLLayer.h>
 
 #define STRINGIZE(x) #x
@@ -91,6 +91,9 @@ enum {
         eaglLayer.drawableProperties = @{kEAGLDrawablePropertyRetainedBacking  : @(NO),
                                          kEAGLDrawablePropertyColorFormat      : kEAGLColorFormatRGBA8};
         _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
+        if (!_context) {
+            _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        }
         _videoSize = CGSizeMake(1080, 1920);
         [EAGLContext setCurrentContext:self.context];
     }
@@ -101,6 +104,8 @@ enum {
             NSLog(@"Problem initializing OpenGL buffers.");
         }
     }
+    
+
 }
 
 
