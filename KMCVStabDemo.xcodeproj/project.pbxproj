@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BCBB287CAF06FAE14585AFD /* libPods-KMCVStabDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F0A6BC06317155D2BBD3D6 /* libPods-KMCVStabDemo.a */; };
 		95060F6B1F063D0B006BE184 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95060F621F063D0B006BE184 /* Info.plist */; };
 		95060F6E1F063D0B006BE184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95060F651F063D0B006BE184 /* Assets.xcassets */; };
 		95060F721F063D0B006BE184 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 95060F691F063D0B006BE184 /* Base.lproj */; };
@@ -43,8 +42,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5DD6A3909FA25539410AB879 /* Pods-KMCVStabDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCVStabDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo.release.xcconfig"; sourceTree = "<group>"; };
-		60529C4C3C76E896E6D39232 /* Pods-KMCVStabDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCVStabDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		95060F431F063BB1006BE184 /* KMCVStabDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMCVStabDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95060F5D1F063C35006BE184 /* KMCVStab.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KMCVStab.framework; path = framework/KMCVStab.framework; sourceTree = "<group>"; };
 		95060F621F063D0B006BE184 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 		95060FA71F063E8B006BE184 /* RecVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecVC.h; sourceTree = "<group>"; };
 		95060FA81F063E8B006BE184 /* RecVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecVC.m; sourceTree = "<group>"; };
 		9595C3291F06739200DAB865 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B0F0A6BC06317155D2BBD3D6 /* libPods-KMCVStabDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCVStabDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,30 +82,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				95060FB61F06401C006BE184 /* KMCVStab.framework in Frameworks */,
-				7BCBB287CAF06FAE14585AFD /* libPods-KMCVStabDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		853C087BF2425288F3FB00C1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				60529C4C3C76E896E6D39232 /* Pods-KMCVStabDemo.debug.xcconfig */,
-				5DD6A3909FA25539410AB879 /* Pods-KMCVStabDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		95060F3A1F063BB1006BE184 = {
 			isa = PBXGroup;
 			children = (
 				95060F5D1F063C35006BE184 /* KMCVStab.framework */,
 				95060F451F063BB1006BE184 /* KMCVStabDemo */,
 				95060F441F063BB1006BE184 /* Products */,
-				853C087BF2425288F3FB00C1 /* Pods */,
-				DB5FEFB5E7EB62C61B800F9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,14 +198,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		DB5FEFB5E7EB62C61B800F9C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B0F0A6BC06317155D2BBD3D6 /* libPods-KMCVStabDemo.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,13 +205,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95060F5A1F063BB1006BE184 /* Build configuration list for PBXNativeTarget "KMCVStabDemo" */;
 			buildPhases = (
-				A407C9930C42D593641C4FB0 /* [CP] Check Pods Manifest.lock */,
 				95060F3F1F063BB1006BE184 /* Sources */,
 				95060F401F063BB1006BE184 /* Frameworks */,
 				95060F411F063BB1006BE184 /* Resources */,
 				95060FB81F06401C006BE184 /* Embed Frameworks */,
-				A00A95E7A340FD695E0A2BB0 /* [CP] Embed Pods Frameworks */,
-				0B65E5FB93EFEAF63F595F00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,54 +265,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0B65E5FB93EFEAF63F595F00 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A00A95E7A340FD695E0A2BB0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMCVStabDemo/Pods-KMCVStabDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A407C9930C42D593641C4FB0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		95060F3F1F063BB1006BE184 /* Sources */ = {
@@ -459,7 +384,6 @@
 		};
 		95060F5B1F063BB1006BE184 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60529C4C3C76E896E6D39232 /* Pods-KMCVStabDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZGJ54Q7R45;
@@ -495,7 +419,6 @@
 		};
 		95060F5C1F063BB1006BE184 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DD6A3909FA25539410AB879 /* Pods-KMCVStabDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZGJ54Q7R45;

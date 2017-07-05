@@ -35,6 +35,7 @@
     BOOL isStartRecord, isSessionStarted;
     
     NSURL *_outputUrl;
+    NSTimeInterval start;
 
 }
 
@@ -133,11 +134,15 @@
             }else{
                 [weakSelf startRecord];
                 weakSelf.recView.recBtn.selected = YES;
-                NSTimeInterval start = time(nil);
+                strongSelf->start = time(nil);
                 if (!weakSelf.timer){
-                    weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 repeats:YES block:^(NSTimer * _Nonnull timer) {
-                        weakSelf.recView.timeLabel.text = [NSString stringWithHMS:(time(nil) - start)];
-                    }];
+                    weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:0.3
+                                                                      target:weakSelf
+                                                                    selector:@selector(onCountDown:)
+                                                                    userInfo:nil repeats:YES];
+//                    weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//                        weakSelf.recView.timeLabel.text = [NSString stringWithHMS:(time(nil) - start)];
+//                    }];
                 }
             }
             
@@ -547,6 +552,10 @@ static CGFloat angleOffsetFromPortraitOrientationToOrientation(AVCaptureVideoOri
 }
 
 
+- (void)onCountDown:(id)sender
+{
+    self.recView.timeLabel.text = [NSString stringWithHMS:(time(nil) - start)];
+}
 
 
 @end
