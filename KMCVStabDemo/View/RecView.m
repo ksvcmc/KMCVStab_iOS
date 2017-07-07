@@ -49,6 +49,7 @@
     [_flashBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         //
         make.left.mas_equalTo(@(18));
+        make.width.height.mas_equalTo(@(40));
         make.centerY.mas_equalTo(bgView);
     }];
     
@@ -60,6 +61,7 @@
     [bgView addSubview:self.toggleBtn];
     [_toggleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(@(-18));
+        make.width.height.mas_equalTo(@(40));
         make.centerY.mas_equalTo(bgView);
     }];
     
