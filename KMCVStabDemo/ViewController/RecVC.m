@@ -62,6 +62,10 @@
         
         [_vStab authWithToken:@"a2fa06b24c9173562ab961a84313c00a" onSuccess:^{
             NSLog(@"鉴权成功");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"鉴权成功" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+                [alert show];
+            });
         } onFailure:^(AuthorizeError iErrorCode) {
             NSString * errorMessage = [[NSString alloc]initWithFormat:@"鉴权失败，错误码:%@", @(iErrorCode)];
             dispatch_async(dispatch_get_main_queue(), ^{
