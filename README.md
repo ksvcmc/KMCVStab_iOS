@@ -34,3 +34,4 @@ pod install
 
 ```
 开启防抖之后outBuffer即为处理过的帧
+## 接入指南
