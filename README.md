@@ -35,3 +35,8 @@ pod install
 ```
 开启防抖之后outBuffer即为处理过的帧
 ## 接入指南
+
+## 反馈与建议  
+主页：https://docs.ksyun.com/read/latest/142/_book/index.html  
+邮箱：ksc-vbu-kmc-dev@kingsoft.com    
+QQ讨论群：574179720 [视频云技术交流群]  
