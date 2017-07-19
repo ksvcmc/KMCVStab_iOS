@@ -60,7 +60,7 @@
     if (self) {
         _vStab = [KMCVStab sharedInstance];
         
-        [_vStab authWithToken:@"a2fa06b24c9173562ab961a84313c00a" onSuccess:^{
+        [_vStab authWithToken:@"210a00cc25c77ee8725fcb218f15b15b" onSuccess:^{
             NSLog(@"鉴权成功");
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"鉴权成功" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
