@@ -34,7 +34,10 @@ pod install
 
 ```
 开启防抖之后outBuffer即为处理过的帧
-## 接入指南
+
+## 接入流程
+接入流程
+![金山魔方接入流程](https://ks3-cn-beijing.ksyun.com/ksy.vcloud.sdk/KMC/image_resource/linkin_image/all.jpg "金山魔方接入流程")
 
 ## 反馈与建议  
 主页：https://docs.ksyun.com/read/latest/142/_book/index.html  
