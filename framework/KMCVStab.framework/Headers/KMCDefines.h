@@ -41,7 +41,11 @@ typedef enum : NSUInteger {
     /**
      服务器异常
      */
-    AUTHORIZE_SERVICE_EXCEPTION = 1008
+    AUTHORIZE_SERVICE_EXCEPTION = 1008,
+    /**
+     网络未连接
+     */
+    AUTHORIZE_ERROR_NotConnectedToInternet = 1009
 } AuthorizeError;
 
 #endif /* KMCDefines_h */

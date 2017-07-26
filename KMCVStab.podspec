@@ -82,6 +82,6 @@ Pod::Spec.new do |s|
 
 
   s.vendored_frameworks ="framework/KMCVStab.framework"
+  s.dependency "UICKeyChainStore", "2.1.1"
   s.requires_arc = true
-  s.dependency "MJExtension"
 end
