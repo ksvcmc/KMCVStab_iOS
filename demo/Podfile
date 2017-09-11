@@ -8,6 +8,6 @@ target 'KMCVStabDemo' do
   # Pods for KMCVStabDemo
   pod 'Masonry'
   pod 'MBProgressHUD'
-  
-
+  pod 'libksygpulive/KSYGPUResource'
+  pod 'libksygpulive/libksygpulive'
 end

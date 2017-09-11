@@ -9,10 +9,10 @@
 #import "RecVC.h"
 #import "RecView.h"
 #import "KMCVStabGLView.h"
+#import <KMCVStab/KMCVStab.h>
 #import "PlayVC.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
-#import <KMCVStab/KMCVStab.h>
 
 @interface RecVC ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 {
@@ -58,14 +58,9 @@
 {
     self = [super init];
     if (self) {
-        _vStab = [KMCVStab sharedInstance];
-        
+        _vStab = [[KMCVStab alloc] initWithOrientation:_videoBufferOrientation];
         [_vStab authWithToken:@"210a00cc25c77ee8725fcb218f15b15b" onSuccess:^{
             NSLog(@"鉴权成功");
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"鉴权成功" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
-                [alert show];
-            });
         } onFailure:^(AuthorizeError iErrorCode) {
             NSString * errorMessage = [[NSString alloc]initWithFormat:@"鉴权失败，错误码:%@", @(iErrorCode)];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -96,9 +91,15 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onOrientationChanged:)
+                                                 name:UIDeviceOrientationDidChangeNotification object:nil];
+
+    
     // Do any additional setup after loading the view.
     _videoTrackTransform = CGAffineTransformIdentity;
 
+    [self setupCamera];
     [self.view addSubview:self.recView];
     [_recView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -164,8 +165,6 @@
                                              selector:@selector(onEnterBackground:)
                                                  name:UIApplicationWillResignActiveNotification
                                                object:nil];
-    
-    [self setupCamera];
 }
 
 
@@ -224,6 +223,7 @@
     if ([session canAddInput:videoDeviceInput]) {
         [session addInput:videoDeviceInput];
         self.videoDeviceInput = videoDeviceInput;
+        
         
     } else {
         return;
@@ -303,7 +303,7 @@
     CVPixelBufferRef resultNormal = _resultBufferNormal;
     //BOOL mirror = self.videoDeviceInput.device.position == AVCaptureDevicePositionFront;
     [self.vStab process:sampleBuffer outBuffer:resultNormal];
-    
+    CVPixelBufferRef tmpBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     //save
     @synchronized (self) {
         if ( isStartRecord ) {
@@ -544,6 +544,7 @@ static CGFloat angleOffsetFromPortraitOrientationToOrientation(AVCaptureVideoOri
                 _videoDevice.flashMode = AVCaptureFlashModeOff;
                 _videoDevice.torchMode = AVCaptureTorchModeOff;
                 _recView.flashBtn.selected = NO;
+                
             }
             
         }
@@ -559,6 +560,35 @@ static CGFloat angleOffsetFromPortraitOrientationToOrientation(AVCaptureVideoOri
 - (void)onCountDown:(id)sender
 {
     self.recView.timeLabel.text = [NSString stringWithHMS:(time(nil) - start)];
+}
+
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+- (void)onOrientationChanged:(NSNotification *)sender
+{
+    
+    UIDeviceOrientation  orientation = [UIDevice currentDevice].orientation;
+    NSLog(@"orientation: %@", @(orientation));
+    
+    switch (orientation)
+    {
+        case UIDeviceOrientationPortrait: 
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            break;
+        default:
+            break;
+    }
+    
 }
 
 

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RecVC.h"
+#import "HomeVC.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    RecVC  *vc = [[RecVC alloc] init];
+    HomeVC  *vc = [[HomeVC alloc] init];
     //UINavigationController *navi = [[UINavigationController alloc]  initWithRootViewController:vc];
     
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

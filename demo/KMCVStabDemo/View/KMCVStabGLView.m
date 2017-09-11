@@ -104,8 +104,6 @@ enum {
             NSLog(@"Problem initializing OpenGL buffers.");
         }
     }
-    
-
 }
 
 

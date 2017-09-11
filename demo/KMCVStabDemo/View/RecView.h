@@ -16,13 +16,15 @@ typedef NS_ENUM(NSUInteger, RecCtlType)
     kFlash,
     kRec,
     kVStab,
-    kPlay
+    kPlay,
+    kBack
 };
 
-@interface RecView : KMCVStabGLView
+//@interface RecView : KMCVStabGLView
+@interface RecView : UIView
 
 //散光灯
-@property (nonatomic, strong)UIButton       *flashBtn;
+@property (nonatomic, strong)UIButton       *backBtn;
 
 //录制时间
 @property (nonatomic, strong)UILabel        *timeLabel;

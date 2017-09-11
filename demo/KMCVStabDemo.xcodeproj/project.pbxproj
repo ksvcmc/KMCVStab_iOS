@@ -22,9 +22,14 @@
 		95060FAF1F063E8B006BE184 /* VideoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA11F063E8B006BE184 /* VideoList.m */; };
 		95060FB01F063E8B006BE184 /* ViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA31F063E8B006BE184 /* ViewItemCell.m */; };
 		95060FB11F063E8B006BE184 /* PlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA61F063E8B006BE184 /* PlayVC.m */; };
-		95060FB21F063E8B006BE184 /* RecVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95060FA81F063E8B006BE184 /* RecVC.m */; };
 		9556E3741F289AFC00584119 /* KMCVStab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556E3701F2899ED00584119 /* KMCVStab.framework */; };
 		9556E3751F289AFC00584119 /* KMCVStab.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9556E3701F2899ED00584119 /* KMCVStab.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95604A8B1F6675A0003927C3 /* CALayer+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 95604A891F6675A0003927C3 /* CALayer+Add.m */; };
+		95604A911F6675B0003927C3 /* StreamerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95604A8C1F6675B0003927C3 /* StreamerVC.m */; };
+		95604A921F6675B0003927C3 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95604A8D1F6675B0003927C3 /* HomeVC.xib */; };
+		95604A931F6675B0003927C3 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95604A8E1F6675B0003927C3 /* HomeVC.m */; };
+		95604A971F6675B8003927C3 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95604A941F6675B8003927C3 /* AboutView.xib */; };
+		95604A981F6675B8003927C3 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95604A951F6675B8003927C3 /* AboutView.m */; };
 		9595C32A1F06739200DAB865 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595C3291F06739200DAB865 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -74,9 +79,17 @@
 		95060FA31F063E8B006BE184 /* ViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewItemCell.m; sourceTree = "<group>"; };
 		95060FA51F063E8B006BE184 /* PlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVC.h; sourceTree = "<group>"; };
 		95060FA61F063E8B006BE184 /* PlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVC.m; sourceTree = "<group>"; };
-		95060FA71F063E8B006BE184 /* RecVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecVC.h; sourceTree = "<group>"; };
-		95060FA81F063E8B006BE184 /* RecVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecVC.m; sourceTree = "<group>"; };
 		9556E3701F2899ED00584119 /* KMCVStab.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KMCVStab.framework; path = ../framework/KMCVStab.framework; sourceTree = "<group>"; };
+		95604A891F6675A0003927C3 /* CALayer+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Add.m"; sourceTree = "<group>"; };
+		95604A8A1F6675A0003927C3 /* CALayer+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Add.h"; sourceTree = "<group>"; };
+		95604A8C1F6675B0003927C3 /* StreamerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamerVC.m; sourceTree = "<group>"; };
+		95604A8D1F6675B0003927C3 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		95604A8E1F6675B0003927C3 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		95604A8F1F6675B0003927C3 /* StreamerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamerVC.h; sourceTree = "<group>"; };
+		95604A901F6675B0003927C3 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		95604A941F6675B8003927C3 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
+		95604A951F6675B8003927C3 /* AboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutView.m; sourceTree = "<group>"; };
+		95604A961F6675B8003927C3 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutView.h; sourceTree = "<group>"; };
 		9595C3291F06739200DAB865 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +169,8 @@
 		95060F881F063E79006BE184 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				95604A891F6675A0003927C3 /* CALayer+Add.m */,
+				95604A8A1F6675A0003927C3 /* CALayer+Add.h */,
 				95060F891F063E79006BE184 /* NSString+Add.h */,
 				95060F8A1F063E79006BE184 /* NSString+Add.m */,
 			);
@@ -186,6 +201,9 @@
 		95060F971F063E8B006BE184 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95604A941F6675B8003927C3 /* AboutView.xib */,
+				95604A951F6675B8003927C3 /* AboutView.m */,
+				95604A961F6675B8003927C3 /* AboutView.h */,
 				95060F981F063E8B006BE184 /* EmptyVideoView.h */,
 				95060F991F063E8B006BE184 /* EmptyVideoView.m */,
 				95060F9A1F063E8B006BE184 /* KMCVStabGLView.h */,
@@ -205,10 +223,13 @@
 		95060FA41F063E8B006BE184 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				95604A8C1F6675B0003927C3 /* StreamerVC.m */,
+				95604A8D1F6675B0003927C3 /* HomeVC.xib */,
+				95604A8E1F6675B0003927C3 /* HomeVC.m */,
+				95604A8F1F6675B0003927C3 /* StreamerVC.h */,
+				95604A901F6675B0003927C3 /* HomeVC.h */,
 				95060FA51F063E8B006BE184 /* PlayVC.h */,
 				95060FA61F063E8B006BE184 /* PlayVC.m */,
-				95060FA71F063E8B006BE184 /* RecVC.h */,
-				95060FA81F063E8B006BE184 /* RecVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -257,7 +278,7 @@
 				TargetAttributes = {
 					95060F421F063BB1006BE184 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 36PUU93BJ2;
+						DevelopmentTeam = ZGJ54Q7R45;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -285,7 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95604A971F6675B8003927C3 /* AboutView.xib in Resources */,
 				95060F721F063D0B006BE184 /* Base.lproj in Resources */,
+				95604A921F6675B0003927C3 /* HomeVC.xib in Resources */,
 				95060F6B1F063D0B006BE184 /* Info.plist in Resources */,
 				95060F6E1F063D0B006BE184 /* Assets.xcassets in Resources */,
 			);
@@ -347,9 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9595C32A1F06739200DAB865 /* main.m in Sources */,
-				95060FB21F063E8B006BE184 /* RecVC.m in Sources */,
+				95604A8B1F6675A0003927C3 /* CALayer+Add.m in Sources */,
 				95060FAB1F063E8B006BE184 /* EmptyVideoView.m in Sources */,
+				95604A981F6675B8003927C3 /* AboutView.m in Sources */,
 				95060FAF1F063E8B006BE184 /* VideoList.m in Sources */,
+				95604A931F6675B0003927C3 /* HomeVC.m in Sources */,
 				95060FA91F063E8B006BE184 /* AppDelegate.m in Sources */,
 				95060FAC1F063E8B006BE184 /* KMCVStabGLView.m in Sources */,
 				95060F8B1F063E79006BE184 /* VideoListModel.m in Sources */,
@@ -359,6 +384,7 @@
 				95060FB01F063E8B006BE184 /* ViewItemCell.m in Sources */,
 				95060F8C1F063E79006BE184 /* NSString+Add.m in Sources */,
 				95060FAE1F063E8B006BE184 /* RecView.m in Sources */,
+				95604A911F6675B0003927C3 /* StreamerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +488,7 @@
 			baseConfigurationReference = 32CA849B9FAC928B6B2E9C20 /* Pods-KMCVStabDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 36PUU93BJ2;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../framework",
@@ -500,7 +526,7 @@
 			baseConfigurationReference = 57750BD44F46DD1191541D3F /* Pods-KMCVStabDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 36PUU93BJ2;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../framework",

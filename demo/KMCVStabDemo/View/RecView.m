@@ -45,11 +45,10 @@
         make.height.mas_equalTo(@(40));
     }];
     
-    [bgView addSubview:self.flashBtn];
-    [_flashBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [bgView addSubview:self.backBtn];
+    [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         //
         make.left.mas_equalTo(@(18));
-        make.width.height.mas_equalTo(@(40));
         make.centerY.mas_equalTo(bgView);
     }];
     
@@ -61,12 +60,11 @@
     [bgView addSubview:self.toggleBtn];
     [_toggleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(@(-18));
-        make.width.height.mas_equalTo(@(40));
         make.centerY.mas_equalTo(bgView);
     }];
     
     UIView *bottomBgView = [[UIView alloc] init];
-    bottomBgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+    bottomBgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.];
     [self addSubview:bottomBgView];
     [bottomBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_equalTo(self);
@@ -95,23 +93,23 @@
         make.centerX.mas_equalTo(_vstabSwitch).offset(3);
     }];
     
-    [bottomBgView addSubview:self.playBtn];
-    [_playBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(@(-51));
-        make.width.height.mas_equalTo(@50);
-        make.centerY.mas_equalTo(_recBtn);
-    }];
+//    [bottomBgView addSubview:self.playBtn];
+//    [_playBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(@(-51));
+//        make.width.height.mas_equalTo(@50);
+//        make.centerY.mas_equalTo(_recBtn);
+//    }];
     
 }
 
 
--(UIButton *)flashBtn
+-(UIButton *)backBtn
 {
-    if (!_flashBtn){
+    if (!_backBtn){
     
-        _flashBtn = [self createButtonWithTag:kFlash image:[UIImage imageNamed:@"flash_on"] image:[UIImage imageNamed:@"flash"]];
+        _backBtn = [self createButtonWithTag:kBack image:[UIImage imageNamed:@"back"] image:[UIImage imageNamed:@"back"]];
     }
-    return _flashBtn;
+    return _backBtn;
 }
 
 - (UILabel *)timeLabel
@@ -158,7 +156,7 @@
 - (UIButton *)recBtn
 {
     if (!_recBtn){
-        _recBtn = [self createButtonWithTag:kRec image:[UIImage imageNamed:@"rec"] image:[UIImage imageNamed:@"recing"]];
+        _recBtn = [self createButtonWithTag:kRec image:[UIImage imageNamed:@"stream_start"] image:[UIImage imageNamed:@"stream_stop"]];
     }
     return _recBtn;
 }
@@ -193,7 +191,6 @@
 - (void)onValueChanged:(UISwitch *)sender
 {
     if (self.block){
-        
         self.block(kVStab, sender.on);
         self.vstabLabel.text = [NSString stringWithFormat:@"防抖:%@", _vstabSwitch.on?@"开":@"关"];
     }

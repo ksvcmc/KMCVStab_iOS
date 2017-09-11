@@ -12,16 +12,17 @@
 
 @interface KMCVStab : NSObject
 
++ (instancetype)sharedInstance;
 
-+(instancetype)sharedInstance;
 /**
  @param token 控制台分配的token
  @param completeSuccess 注册成功后的回调
  @param completeFailure 注册失败后的回调
+ 只需鉴权一次即可
  */
 - (void)authWithToken:(NSString *)token
-                  onSuccess:(void (^)(void))completeSuccess
-                  onFailure:(void (^)(AuthorizeError iErrorCode))completeFailure;
+            onSuccess:(void (^)(void))completeSuccess
+            onFailure:(void (^)(AuthorizeError iErrorCode))completeFailure;
 
 
 - (void)process:(CMSampleBufferRef )inBuffer outBuffer:(CVPixelBufferRef)outBuffer;
@@ -30,5 +31,11 @@
  是否开启防抖模式， YES 开启，NO关闭
  */
 @property(nonatomic, assign) BOOL enableStabi;
+
+/**
+    目前支持的方向是AVCaptureVideoOrientationLandscapeRight、AVCaptureVideoOrientationPortrait
+    默认是AVCaptureVideoOrientationLandscapeRight
+ */
+@property(nonatomic, assign) AVCaptureVideoOrientation videoOrientation;
 
 @end
