@@ -1,0 +1,13 @@
+before_script:
+  - source ~/.rvm/scripts/rvm
+  - export LANG=en_US.UTF-8
+stages:
+  - build
+
+build_kmcvstab_demo:
+  stage: build
+  script:
+    - pod install
+    - xcodebuild -workspace *.xcwork* -scheme KMCVStabDemo -quiet
+  tags:
+    - ios
