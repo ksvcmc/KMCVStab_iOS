@@ -65,20 +65,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.previewView.frame  = self.view.frame;
+    //self.previewView.frame  = self.view.frame;
+
+    self.previewView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.previewView];
     [self.view addSubview:self.recView];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(onOrientationChanged:)
-//                                                 name:UIDeviceOrientationDidChangeNotification object:nil];
-    
     
     // Do any additional setup after loading the view.
     
     __weak typeof(self) weakSelf = self;
     self.recView.recBtn.enabled = NO;
-    _kmcvStab = [KMCVStab sharedInstance];// initWithOrientation:AVCaptureVideoOrientationPortrait];
-    //_kmcvStab = [[KMCVStab alloc] initWithOrientation:AVCaptureVideoOrientationPortrait];
+    _kmcvStab = [KMCVStab sharedInstance];
     _kmcvStab.videoOrientation = AVCaptureVideoOrientationPortrait;
     [_kmcvStab authWithToken:@"a2fa06b24c9173562ab961a84313c00a" onSuccess:^{
         _isAuth = TRUE;
@@ -105,10 +102,7 @@
         
     }];
     
-    [self prepareStreamerKit];
-    [self registerNotifications];
-    
-    
+
     [_recView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
@@ -131,11 +125,35 @@
         }
         
     };
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    // size
+    CGFloat minLength = MIN(_previewView.frame.size.width, _previewView.frame.size.height);
+    CGFloat maxLength = MAX(_previewView.frame.size.width, _previewView.frame.size.height);
+    CGRect newFrame;
+    // frame
+    CGAffineTransform newTransform;
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(onEnterBackground:)
-//                                                 name:UIApplicationWillResignActiveNotification
-//                                               object:nil];
+    UIInterfaceOrientation currentInterfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    if (currentInterfaceOrientation == UIInterfaceOrientationPortrait) {
+        newTransform = CGAffineTransformIdentity;
+        newFrame = CGRectMake(0, 0, minLength, maxLength);
+    } else {
+        newTransform = CGAffineTransformMakeRotation(M_PI_2*(currentInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ? 1 : -1));
+        newFrame = CGRectMake(0, 0, maxLength, minLength);
+    }
+    
+    _previewView.transform = newTransform;
+    _previewView.frame = newFrame;
+    
+    [self prepareStreamerKit];
+    [self registerNotifications];
 }
 
 - (void)toggleCamera
@@ -150,26 +168,6 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
-//- (void)onEnterBackground:(NSNotificationCenter *)sender
-//{
-////    if (!isStartRecord) return ;
-////    __weak typeof(self) weakSelf = self;
-////    [self stopRecord:^{
-////        __strong typeof(self) strongSelf = weakSelf;
-////        UIImage *image = [Helper thumbnailForVideo:strongSelf->_outputUrl error:nil];
-////        dispatch_async(dispatch_get_main_queue(), ^{
-////            weakSelf.recView.recBtn.selected = NO;
-////            [weakSelf.recView.playBtn setImage:image forState:UIControlStateNormal];
-////            weakSelf.recView.timeLabel.text = [NSString stringWithHMS:0];
-////        });
-////    }];
-//    if (self.timer){
-//        [self.timer invalidate];
-//        self.timer = nil;
-//    }
-//}
-
-
 - (void)startStream
 {
     if (!_isAuth){
@@ -179,11 +177,7 @@
     if (!_streamerKit.streamerBase.isStreaming){
         self.recView.recBtn.selected = YES;
         [_streamerKit.streamerBase startStream:[NSURL URLWithString:_strUrl]];
-        self->start = time(nil);
-        
-        if (!self.timer){
-            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(onCountDown:) userInfo:nil repeats:YES];
-        }
+
     }else{
         
         [_streamerKit.streamerBase stopStream];
@@ -221,13 +215,13 @@
     return _recView;
 }
 
-- (UIView *)previewView
-{
-    if (!_previewView){
-        _previewView = [[UIView alloc] init];
-    }
-    return _previewView;
-}
+//- (UIView *)previewView
+//{
+//    if (!_previewView){
+//        _previewView = [[UIView alloc] init];
+//    }
+//    return _previewView;
+//}
 
 
 - (void)prepareStreamerKit{
@@ -419,6 +413,13 @@
         BOOL bRec = _streamerKit.streamerBase.bypassRecordState == KSYRecordStateRecording;
         
         if (_isSaveVideo && _streamerKit.streamerBase.isStreaming && !bRec ){
+            
+            self->start = time(nil);
+            
+            if (!self.timer){
+                self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(onCountDown:) userInfo:nil repeats:YES];
+            }
+            
             _bypassRecFile = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@.mp4", @(self->start)];
             NSURL *url =[[NSURL alloc] initFileURLWithPath:_bypassRecFile];
             [_streamerKit.streamerBase startBypassRecord:url];
