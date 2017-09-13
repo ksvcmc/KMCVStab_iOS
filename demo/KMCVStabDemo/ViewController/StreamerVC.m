@@ -176,11 +176,13 @@
     }
     if (!_streamerKit.streamerBase.isStreaming){
         self.recView.recBtn.selected = YES;
+        self.recView.recBtn.enabled  = NO;
         [_streamerKit.streamerBase startStream:[NSURL URLWithString:_strUrl]];
 
     }else{
         
         [_streamerKit.streamerBase stopStream];
+        
         //self.recView.recBtn.selected = NO;
         if (self.timer){
             [self.timer invalidate];
@@ -350,6 +352,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf toast:[NSString stringWithFormat:@"推流出错了, 错误码:(%@)", @(errCode)]];
                 weakSelf.recView.recBtn.selected = NO;
+                weakSelf.recView.recBtn.enabled  = YES;
                 [_streamerKit.streamerBase stopStream];
                 if (self.timer){
                     [self.timer invalidate];
@@ -410,21 +413,24 @@
 
         }
         _recView.recBtn.selected = NO;
+        _recView.recBtn.enabled  = YES;
     }
     else if ( _streamerKit.streamerBase.streamState == KSYStreamStateConnected){
         NSLog(@"connected");
         
         _recView.recBtn.selected = YES;
+        _recView.recBtn.enabled  = YES;
+    
+        if (!self.timer){
+            self->start = time(nil);
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(onCountDown:) userInfo:nil repeats:YES];
+        }
         
         BOOL bRec = _streamerKit.streamerBase.bypassRecordState == KSYRecordStateRecording;
-        
+    
         if (_isSaveVideo && _streamerKit.streamerBase.isStreaming && !bRec ){
             
-            self->start = time(nil);
-            
-            if (!self.timer){
-                self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(onCountDown:) userInfo:nil repeats:YES];
-            }
+
             
             _bypassRecFile = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@.mp4", @(self->start)];
             NSURL *url =[[NSURL alloc] initFileURLWithPath:_bypassRecFile];
