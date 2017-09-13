@@ -187,25 +187,12 @@
     }else{
         
         [_streamerKit.streamerBase stopStream];
-        self.recView.recBtn.selected = NO;
+        //self.recView.recBtn.selected = NO;
         if (self.timer){
             [self.timer invalidate];
             self.timer = nil;
         }
         self.recView.timeLabel.text = [NSString stringWithHMS:0];
-
-        if (_isSaveVideo && _bypassRecFile != nil){
-            
-            self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            self.hud.label.text = @"正在保存视频";
-            if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(_bypassRecFile)) {
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    UISaveVideoAtPathToSavedPhotosAlbum(_bypassRecFile, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-                });
-
-
-            }
-        }
 
     }
     
@@ -364,9 +351,14 @@
         case KSYStreamErrorCode_CONNECT_BREAK:      // 网络中断
             [self tryReconnect];
             return;
-        default:
-            self.recView.recBtn.selected = NO;
-            break;
+        default:{
+            __weak typeof(self) weakSelf = self;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf toast:[NSString stringWithFormat:@"推流出错了, 错误码:(%@)", @(errCode)]];
+                weakSelf.recView.recBtn.selected = NO;
+            });
+            
+        }break;
     }
 }
 
@@ -394,8 +386,29 @@
 - (void) onStreamStateChange:(NSNotification *)notification {
     NSLog(@"=================>");
     if ( _streamerKit.streamerBase.streamState == KSYStreamStateIdle) {
-        NSLog(@"idle");
-        //if (weakSelf.recView.recBtn.selected)
+        NSLog(@"onStreamStateChange idle");
+        //推流结束
+        if (_recView.recBtn.selected){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (_isSaveVideo && _bypassRecFile != nil){
+                    
+                    
+                    if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(_bypassRecFile)) {
+                        
+                        self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                        self.hud.label.text = @"正在保存视频";
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            UISaveVideoAtPathToSavedPhotosAlbum(_bypassRecFile, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+                        });
+                        
+                        
+                    }else{
+                        [self toast:@"该视频无法无法保存"];
+                    }
+                }
+            });
+
+        }
         _recView.recBtn.selected = NO;
     }
     else if ( _streamerKit.streamerBase.streamState == KSYStreamStateConnected){
