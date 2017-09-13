@@ -350,6 +350,12 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf toast:[NSString stringWithFormat:@"推流出错了, 错误码:(%@)", @(errCode)]];
                 weakSelf.recView.recBtn.selected = NO;
+                [_streamerKit.streamerBase stopStream];
+                if (self.timer){
+                    [self.timer invalidate];
+                    self.timer = nil;
+                }
+                self.recView.timeLabel.text = [NSString stringWithHMS:0];
             });
             
         }break;
