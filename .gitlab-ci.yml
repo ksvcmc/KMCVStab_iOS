@@ -7,6 +7,7 @@ stages:
 build_kmcvstab_demo:
   stage: build
   script:
+    - cd demo
     - pod install
     - xcodebuild -workspace *.xcwork* -scheme KMCVStabDemo -quiet
   tags:
