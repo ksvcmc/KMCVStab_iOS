@@ -76,9 +76,10 @@
     self.recView.recBtn.enabled = NO;
     _kmcvStab = [KMCVStab sharedInstance];
     _kmcvStab.videoOrientation = AVCaptureVideoOrientationPortrait;
-    [_kmcvStab authWithToken:@"a2fa06b24c9173562ab961a84313c00a" onSuccess:^{
+    [_kmcvStab authWithToken:@"210a00cc25c77ee8725fcb218f15b15b" onSuccess:^{
         
         __strong typeof(self) strongSelf = weakSelf;
+
         strongSelf->_isAuth = TRUE;
         dispatch_async(dispatch_get_main_queue(), ^{
             //weakSelf.errLabel.text = @"鉴权成功";
