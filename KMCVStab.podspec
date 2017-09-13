@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KMCVStab"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "金山魔方防抖方案."
   s.ios.deployment_target = "8.0"
   # This description is used to generate tags and improve search results.
