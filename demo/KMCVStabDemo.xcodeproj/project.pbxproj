@@ -488,6 +488,7 @@
 			baseConfigurationReference = 32CA849B9FAC928B6B2E9C20 /* Pods-KMCVStabDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZGJ54Q7R45;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -66,7 +66,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //self.previewView.frame  = self.view.frame;
-
     self.previewView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.previewView];
     [self.view addSubview:self.recView];
@@ -78,26 +77,27 @@
     _kmcvStab = [KMCVStab sharedInstance];
     _kmcvStab.videoOrientation = AVCaptureVideoOrientationPortrait;
     [_kmcvStab authWithToken:@"a2fa06b24c9173562ab961a84313c00a" onSuccess:^{
-        _isAuth = TRUE;
+        
+        __strong typeof(self) strongSelf = weakSelf;
+        strongSelf->_isAuth = TRUE;
         dispatch_async(dispatch_get_main_queue(), ^{
             //weakSelf.errLabel.text = @"鉴权成功";
             
-            self.recView.recBtn.enabled = YES;
+            weakSelf.recView.recBtn.enabled = YES;
         });
-        
-        
-        
+    
     } onFailure:^(AuthorizeError iErrorCode) {
+        
+        __strong typeof(self) strongSelf = weakSelf;
         if (iErrorCode == AUTHORIZE_ERROR_NotConnectedToInternet){
-            _errStr = @"无网络连接，请检查你的网络状态";
+            strongSelf->_errStr = @"无网络连接，请检查你的网络状态";
         }else{
-            _errStr = [NSString stringWithFormat:@"鉴权失败,错误码：%@", @(iErrorCode)];
+            strongSelf->_errStr = [NSString stringWithFormat:@"鉴权失败,错误码：%@", @(iErrorCode)];
         }
-        [weakSelf toast:_errStr];
-        _isAuth = false;
+        [weakSelf toast:strongSelf->_errStr];
+        strongSelf->_isAuth = false;
         dispatch_async(dispatch_get_main_queue(), ^{
-            //weakSelf.errLabel.text = @"鉴权成功";
-            self.recView.recBtn.enabled = YES;
+            weakSelf.recView.recBtn.enabled = YES;
         });
         
     }];
@@ -165,6 +165,7 @@
 {
     [_streamerKit stopPreview];
     [_streamerKit.streamerBase stopStream];
+    _streamerKit = nil;
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
@@ -217,15 +218,6 @@
     return _recView;
 }
 
-//- (UIView *)previewView
-//{
-//    if (!_previewView){
-//        _previewView = [[UIView alloc] init];
-//    }
-//    return _previewView;
-//}
-
-
 - (void)prepareStreamerKit{
     if (!_streamerKit){
         _streamerKit = [[KSYGPUStreamerKit alloc] initWithDefaultCfg];
@@ -253,6 +245,7 @@
         size_t h = CVPixelBufferGetHeight(pixelBuffer);
         
         __strong typeof(self) strongSelf = weakSelf;
+        
         if (strongSelf && !strongSelf->_tmpPixelBuffer){
             // empty IOSurface properties dictionary
             CFDictionaryRef empty = CFDictionaryCreate(kCFAllocatorDefault, NULL, NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
@@ -475,6 +468,10 @@
 -(void)dealloc
 {
     // 停止预览
+    if (_tmpPixelBuffer){
+        CFRelease(_tmpPixelBuffer);
+        _tmpPixelBuffer = nil;
+    }
     [_streamerKit stopPreview];
     _streamerKit = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -584,11 +581,5 @@
     
     
 }
-
-
-
-
-
-
 
 @end
