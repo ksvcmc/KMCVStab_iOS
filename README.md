@@ -1,4 +1,11 @@
 # 金山云魔方防抖API文档
+
+[![Apps Using](https://img.shields.io/cocoapods/at/KMCVStab.svg?label=Apps%20Using%20KMCVStab&colorB=28B9FE)](http://cocoapods.org/pods/KMCVStab)[![Downloads](https://img.shields.io/cocoapods/dt/KMCVStab.svg?label=Total%20Downloads%20KMCVStab&colorB=28B9FE)](http://cocoapods.org/pods/KMCVStab)
+
+[![Latest release](https://img.shields.io/github/release/ksvcmc/KMCVStab_iOS.svg)](https://github.com/ksvcmc/KMCVStab_iOS/releases/latest)
+[![CocoaPods platform](https://img.shields.io/cocoapods/p/KMCVStab.svg)](https://cocoapods.org/pods/KMCVStab)
+[![CocoaPods version](https://img.shields.io/cocoapods/v/KMCVStab.svg?label=pod_github)](https://cocoapods.org/pods/KMCVStab)
+
 ## 项目背景
 金山魔方是一个多媒体能力提供平台，通过统一接入API、统一鉴权、统一计费等多种手段，降低客户接入多媒体处理能力的代价，提供多媒体能力供应商的效率。 本文档主要针对视频防抖功能而说明。
 ## 鉴权
